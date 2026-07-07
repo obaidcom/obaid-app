@@ -976,7 +976,7 @@ if (typeof supabase !== 'undefined' && supabase.createClient) {
 // نيابة عنك لأنها تحتاج مفاتيح سرّية خاصة بمشروعك):
 //   1) ولّد مفاتيح VAPID: npx web-push generate-vapid-keys
 //   2) الصق المفتاح العام (Public Key) هنا بدل النص أدناه:
-const VAPID_PUBLIC_KEY = 'PASTE_YOUR_VAPID_PUBLIC_KEY_HERE';
+const VAPID_PUBLIC_KEY = 'BL50qjfI45wvmhUpwz0lDCWXbx56rasG3HFL-TrLhDR9oDObPYRCQTniKafhbKBOWEh-y3APaTCK2fpcnp3F0vE';
 //   3) انشر ملف sw.js في جذر موقعك (نفس مجلد هذا الملف)
 //   4) انشر الدالة السحابية المرفقة: supabase functions deploy send-push
 //   5) اضبط الأسرار: supabase secrets set VAPID_PUBLIC_KEY=... VAPID_PRIVATE_KEY=... VAPID_SUBJECT=mailto:you@example.com
