@@ -38,6 +38,25 @@ img{max-width:100%}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* Reference-layout refinement: white and blue storefront */
+:root{--blue:#1769ff;--navy:#14243a;--navy2:#1e4f9a;--sky:#edf5ff;--bg:#fff;--ink:#17263c;--muted:#78869a;--line:#e8edf4}
+body{background:#fff;color:var(--ink)}
+.announcement{background:#172437;color:#f4f7fc;padding:7px 16px;font-size:11px;display:flex;justify-content:space-between}
+.header-main{min-height:68px;gap:20px}.logo-mark{background:var(--blue);box-shadow:none}.logo-name{color:#17263c}.search{background:#fff;border-color:#e5eaf2;border-radius:24px}.search button{background:transparent;color:var(--blue);padding:5px 8px}.icon-action{border:0;background:#fff;padding:7px 9px}.nav-wrap{border-top:1px solid #f1f3f7}.nav{gap:27px;min-height:42px}
+.hero{min-height:290px;margin-top:20px;background:linear-gradient(110deg,#edf5ff,#f8fbff);border-radius:12px;grid-template-columns:1fr 1fr;overflow:hidden;color:var(--ink)}
+.hero:after{display:none}.hero-photo{inset:0 auto 0 0;width:48%;z-index:0;background-image:url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=85');background-position:center;background-size:cover}
+.hero-copy{grid-column:2;grid-row:1;z-index:1;padding:32px 8% 28px 4%}.hero-copy .eyebrow{background:transparent;border:0;color:var(--blue);padding:0}.hero-copy .eyebrow i{background:var(--blue)}
+.hero h1{font-size:clamp(28px,3.5vw,42px);color:#14243a;margin:10px 0}.hero h1 span{color:var(--blue)}.hero p{color:#58677b;font-size:13px}.btn-blue{background:var(--blue);box-shadow:none}.btn-glass{display:none}.hero-stats{display:none}.hero-visual{display:none}
+.trust-row{display:none}
+.section{padding-top:27px}.section-title h2{font-size:21px}.section-title p{display:none}
+.categories{grid-template-columns:repeat(8,minmax(0,1fr));gap:11px}.category{min-height:87px;padding:12px 6px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:7px;text-align:center;background:#f7faff;border:1px solid #f0f3f8;border-radius:10px}.cat-img{width:34px;height:34px;flex:0 0 34px;background:transparent;border-radius:0}.cat-img img{display:none}.cat-img:after{content:'◈';font-size:25px;color:var(--blue);display:grid;place-items:center;height:100%}.category b{font-size:10px}.category small{display:none}
+.products{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}.product{border-radius:11px;box-shadow:0 3px 10px #1b345308}.product-photo{height:155px;background:#f6f8fb}.product-info{padding:12px}.product h3{font-size:12px}.add{background:var(--blue);border-radius:7px}.badge{background:var(--blue)}
+.offer-banner{background:linear-gradient(110deg,#1769ff,#dcecff);color:#14243a}.offer-banner p{color:#435b7a}.offer-banner .btn{color:var(--blue)}
+.newsletter{border-radius:12px}footer{background:#172437}
+@media(max-width:900px){.categories{grid-template-columns:repeat(4,minmax(0,1fr))}.products{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{min-height:260px}.hero-copy{padding:25px}.hero-photo{width:48%}}
+@media(max-width:600px){.announcement{justify-content:center}.announcement strong{display:none}.header-main{min-height:62px}.hero{margin-top:12px;grid-template-columns:1fr;min-height:0}.hero-photo{position:relative;inset:auto;width:100%;height:165px;grid-row:1}.hero-copy{grid-column:1;grid-row:2;padding:20px}.hero h1{font-size:29px}.categories{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.category{min-height:75px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-photo{height:140px}.nav{gap:16px}}
+
 </style></head>
 <body>
 <div class="announcement">✨ عروض متجر عبيد مستمرة — <strong>تسوّق المميز بسعر أفضل</strong> &nbsp; | &nbsp; خدمة ودعم نهتم فيك</div>
