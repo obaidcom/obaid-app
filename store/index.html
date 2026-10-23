@@ -127,3 +127,75 @@ function resetFilter(e){e.preventDefault();document.getElementById('searchInput'
 function subscribe(e){e.preventDefault();toast('شكراً لك! الاشتراك تجريبي ولم يتم إرسال البريد.');e.target.reset()}
 document.getElementById('year').textContent=new Date().getFullYear();saveCart();
 </script></body></html>
+
+/* Obied Store — modern storefront polish */
+:root{--blue:#155eef;--navy:#10233f;--sky:#edf4ff;--line:#e8edf5;--radius:18px}
+html{scroll-padding-top:120px}
+body{background:#f8faff;letter-spacing:0}
+.announcement{justify-content:center;gap:6px;background:linear-gradient(90deg,#10233f,#173e72);padding:10px 14px;font-size:11px}
+header{background:rgba(255,255,255,.94);backdrop-filter:blur(16px);box-shadow:0 5px 24px #10233f0a}
+.header-main{padding:15px 0}
+.logo-mark{border-radius:14px;background:linear-gradient(145deg,#377dff,#155eef);box-shadow:0 8px 18px #155eef26}
+.search{background:#f7f9fd;border:1px solid #e8edf5;border-radius:14px;transition:.2s}
+.search:focus-within{border-color:#a9c5ff;box-shadow:0 0 0 4px #155eef0c}
+.search button{border-radius:10px;background:#155eef;color:#fff;padding:9px 14px}
+.icon-action{border:1px solid #e9eef6;border-radius:12px;transition:.2s}
+.icon-action:hover{background:#f4f7ff;border-color:#d7e4ff}
+.nav a{padding:12px 0}
+.nav a.active:after,.nav a:hover:after{content:"";position:absolute;bottom:3px;right:0;left:0;height:2px;background:#155eef;border-radius:5px}
+.hero{border-radius:22px;box-shadow:0 18px 45px #10233f0b;background:#edf4ff}
+.hero-photo{border-radius:0}
+.hero-copy .eyebrow{font-size:12px;letter-spacing:.1px}
+.hero h1{line-height:1.3;letter-spacing:-.5px}
+.hero p{line-height:2.1}
+.btn{min-height:44px;border-radius:12px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-blue{box-shadow:0 8px 18px #155eef25}
+.section{padding-top:34px}
+.section-title{margin-bottom:20px}
+.section-title h2{letter-spacing:-.25px}
+.categories{gap:12px}
+.category{border-radius:15px;background:#fff;box-shadow:0 5px 18px #10233f06;transition:transform .2s,border-color .2s,box-shadow .2s}
+.category:hover{transform:translateY(-4px);box-shadow:0 14px 28px #10233f0d}
+.cat-img:after{content:'✦';font-size:24px;color:#155eef;background:#eaf1ff;border-radius:12px;width:38px;height:38px}
+.products{gap:18px}
+.product{border:1px solid #edf0f6;border-radius:16px;box-shadow:0 5px 20px #10233f07;transition:transform .22s,box-shadow .22s}
+.product:hover{transform:translateY(-5px);box-shadow:0 18px 36px #10233f12}
+.product-photo{background:linear-gradient(145deg,#f5f8fd,#eef3fa)}
+.product-photo img{mix-blend-mode:multiply}
+.product-info{padding:15px}
+.product h3{min-height:42px}
+.wish{box-shadow:0 4px 12px #10233f12}
+.add{border-radius:10px;transition:background .2s,transform .2s}
+.add:hover{transform:translateY(-1px)}
+.badge{border-radius:8px;padding:5px 10px}
+.offer-banner{border-radius:20px;box-shadow:0 12px 30px #155eef0a}
+.newsletter{border-radius:18px;box-shadow:0 6px 24px #10233f05}
+.subscribe input{border-radius:12px}
+.subscribe button{border-radius:12px}
+footer{margin-top:8px}
+.mobile-nav{backdrop-filter:blur(16px);background:rgba(255,255,255,.96)}
+.mobile-nav a{padding:4px 0;border-radius:10px}
+.mobile-nav a.active{background:#f0f5ff}
+.toast{border-radius:14px}
+.drawer{box-shadow:18px 0 55px #06152d25}
+.field input,.field textarea,.field select{border-radius:12px}
+@media(max-width:900px){.products{gap:13px}.hero{border-radius:18px}}
+@media(max-width:600px){
+ .announcement{font-size:10px;padding:9px}
+ .header-main{padding:12px 0}
+ .hero{border-radius:17px;overflow:hidden}
+ .hero-photo{height:175px}
+ .hero-copy{padding:22px}
+ .section{padding-top:27px}
+ .categories{gap:8px}
+ .category{border-radius:12px;padding:8px 4px}
+ .cat-img:after{width:34px;height:34px;font-size:21px}
+ .products{gap:10px}
+ .product{border-radius:13px}
+ .product-info{padding:10px}
+ .product h3{min-height:40px}
+ .product-photo img{mix-blend-mode:normal}
+ .offer-banner{border-radius:16px}
+ .newsletter{border-radius:15px}
+}
