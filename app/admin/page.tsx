@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import {
-  Activity, ArrowDownLeft, ArrowUpLeft, Bell, Check, ChevronLeft, CircleDollarSign,
+  Activity, Bell, Check, ChevronLeft, CircleDollarSign,
   ClipboardList, CreditCard, Gauge, Globe2, LayoutDashboard, Menu, Package,
   Save, Settings2, ShieldCheck, ShoppingBag, Truck, Users, X
 } from "lucide-react";
@@ -34,14 +34,12 @@ export default function AdminPage() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [settings, setSettings] = useState<StoreSettings>(initialSettings);
   const [saved, setSaved] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     try {
       const stored = localStorage.getItem("obaid-store-admin-settings-v1");
       if (stored) setSettings({ ...initialSettings, ...JSON.parse(stored) });
     } catch {}
-    setHydrated(true);
   }, []);
 
   const update = <K extends keyof StoreSettings>(key: K, value: StoreSettings[K]) => {
