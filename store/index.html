@@ -192,6 +192,89 @@ body{background:#fff;color:var(--ink)}
 @media(max-width:900px){.store-footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}.footer-about{grid-column:1/-1}.footer-contact{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.brand-lockup{gap:8px}.logo-mark{width:41px;height:41px;border-radius:13px}.logo-mark svg{width:33px;height:33px}.logo-name>span{font-size:16px}.logo-name small{font-size:9px}.hero-slider-controls{right:12px;bottom:10px;padding:4px 6px}.slider-arrow{width:30px;height:30px}.store-footer{margin-top:30px;padding:31px 0 18px}.store-footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:21px 16px}.footer-about{grid-column:1/-1}.footer-contact{grid-template-columns:1fr}.store-footer .footer-grid h4{margin-bottom:12px}.store-footer .footer-grid a{overflow-wrap:anywhere}.store-footer .copyright{font-size:9px}}
 
+
+/* Premium responsive navigation, logo and category icon cards */
+.logo-mark{width:49px;height:49px;border-radius:16px;box-shadow:0 9px 23px #1769ff35, inset 0 1px #ffffff5c}
+.logo-name>span{font-size:21px;font-weight:900;letter-spacing:-.7px}
+.logo-name>span b{font-weight:900;color:#1769ff}
+.logo-name small{font-size:10px;letter-spacing:.15px}
+.header-main{padding-top:14px;padding-bottom:14px;gap:22px}
+.nav-wrap{background:linear-gradient(180deg,#fff,#fbfcff);border-top:1px solid #edf1f7}
+.premium-nav{min-height:58px;gap:7px;justify-content:space-between;overflow-x:auto;scrollbar-width:none;padding:6px 0}
+.premium-nav::-webkit-scrollbar{display:none}
+.premium-nav a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 15px;border-radius:12px;color:#5a6b81;font-size:12px;white-space:nowrap;transition:background .2s,color .2s,transform .2s}
+.premium-nav a svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.premium-nav a.active,.premium-nav a:hover{color:#1769ff;background:#edf4ff}
+.premium-nav a.active{font-weight:900;box-shadow:inset 0 0 0 1px #dce9ff}
+.premium-nav .nav-offer{color:#e05269;background:#fff4f5}
+.category-icon-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+.category-icon-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-height:185px;padding:18px 17px 15px;border-radius:19px;gap:12px;background:linear-gradient(155deg,#fff 0%,#fbfdff 100%);box-shadow:0 7px 22px #1c3a5c08;overflow:hidden}
+.category-icon-card:before{content:"";position:absolute;inset:auto -22px -48px auto;width:112px;height:112px;border-radius:50%;background:var(--cat-tint,#edf4ff);opacity:.72;transition:transform .25s}
+.category-icon-card:hover{transform:translateY(-5px);border-color:#c9dcff;box-shadow:0 16px 35px #1c4b8514}
+.category-icon-card:hover:before{transform:scale(1.3)}
+.cat-img.cat-icon{width:60px;height:60px;flex:0 0 60px;display:grid;place-items:center;border-radius:18px;position:relative;z-index:1;overflow:visible}
+.cat-icon svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.electronics-icon{background:#eaf2ff;color:#2268e8}.audio-icon{background:#e9f8f5;color:#128775}.home-icon{background:#fff3e6;color:#cb7b20}.fashion-icon{background:#f8edff;color:#9754c8}.accessories-icon{background:#fff0f2;color:#d94b68}
+.category-icon-card .cat-copy{position:relative;z-index:1;width:100%}
+.category-icon-card b{font-size:13px;font-weight:900;color:#182a43}
+.category-icon-card small{font-size:10px;color:#7a899d;margin-top:5px}
+.category-icon-card .cat-count{display:inline-flex;margin-top:10px;background:#f0f5fd;color:#61738d;border-radius:7px;padding:3px 8px;font-size:9px;font-weight:800}
+.cat-arrow{position:absolute;left:14px;top:16px;width:25px;height:25px;display:grid;place-items:center;border-radius:8px;background:#f1f5fb;color:#8293a9;font-size:15px;transition:.2s;z-index:2}
+.category-icon-card:hover .cat-arrow{background:#1769ff;color:#fff;transform:translate(-2px,-2px)}
+/* Slider scales cleanly from wide desktop to small phones */
+.hero{width:100%;min-height:clamp(350px,38vw,475px);grid-template-columns:minmax(0,1.08fr) minmax(250px,.92fr);border-radius:26px}
+.hero-copy{padding:clamp(28px,4.4vw,58px) clamp(22px,4vw,58px) 58px clamp(22px,4vw,58px);min-width:0}
+.hero h1{font-size:clamp(31px,4.15vw,56px);line-height:1.32}
+.hero p{font-size:clamp(12px,1.1vw,14px)}
+.hero-visual{width:clamp(175px,22vw,290px);margin:0 0 48px 20px}
+.hero-photo{inset:0 22% 0 0;background-position:center}
+.hero:after{background:linear-gradient(90deg,#071a33 0%,#071a33f5 35%,#071a33b8 62%,#071a3350 100%)}
+.hero-slider-controls{bottom:16px;right:20px;gap:10px;padding:6px 9px;background:#fffdf1e8;border:1px solid #ffffff80;border-radius:999px;box-shadow:0 8px 24px #03142b28;backdrop-filter:blur(10px)}
+.slider-arrow{width:34px;height:34px;font-size:24px}
+.slider-dot{height:7px;width:7px}.slider-dot.active{width:25px}
+@media(max-width:1000px){
+ .header-main{gap:13px}.logo-name>span{font-size:18px}.premium-nav{gap:3px}.premium-nav a{padding:0 11px}
+ .hero{min-height:350px;grid-template-columns:minmax(0,1fr) minmax(210px,.8fr)}
+ .hero-visual{width:clamp(175px,24vw,230px);margin-left:18px}
+ .category-icon-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .category-icon-card{min-height:166px}
+}
+@media(max-width:650px){
+ .header-main{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px;padding:10px 0}
+ .brand-lockup{gap:8px}.logo-mark{width:42px;height:42px;border-radius:14px}.logo-mark svg{width:34px;height:34px}
+ .logo-name>span{font-size:17px}.logo-name small{font-size:9px}
+ .nav-wrap{background:#fff}.premium-nav{justify-content:flex-start;gap:5px;min-height:53px;padding:6px 0}
+ .premium-nav a{flex:0 0 auto;min-height:37px;padding:0 11px;gap:6px;font-size:11px}
+ .premium-nav a svg{width:15px;height:15px}
+ .hero{display:flex;flex-direction:column;justify-content:flex-end;min-height:0;height:auto;aspect-ratio:auto;border-radius:20px;margin-top:14px;padding:0;isolation:isolate}
+ .hero-photo{inset:0;opacity:.8;background-position:center;background-size:cover}
+ .hero:after{z-index:-1;background:linear-gradient(0deg,#071a33 0%,#071a33ed 37%,#071a3399 68%,#071a3340 100%)}
+ .hero-copy{align-self:stretch;padding:clamp(145px,42vw,220px) 19px 60px;position:relative;z-index:1}
+ .hero .eyebrow{font-size:9px;padding:6px 10px}
+ .hero h1{font-size:clamp(29px,8.4vw,39px);margin:12px 0 8px;line-height:1.35}
+ .hero p{font-size:12px;line-height:1.9;margin-bottom:15px;max-width:100%}
+ .hero-actions{gap:8px}.hero-actions .btn{padding:11px 14px;font-size:11px}
+ .hero-stats{gap:15px;margin-top:19px;flex-wrap:wrap}
+ .hero-stats b{font-size:13px}.hero-stats small{font-size:9px}
+ .hero-visual{display:none}
+ .hero-slider-controls{bottom:12px;right:12px;left:auto;gap:7px;padding:4px 7px}
+ .slider-arrow{width:29px;height:29px;font-size:21px}
+ .slider-dot{width:6px;height:6px}.slider-dot.active{width:19px}
+ .category-icon-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .category-icon-card{min-height:155px;padding:14px;border-radius:16px;gap:9px}
+ .cat-img.cat-icon{width:51px;height:51px;flex-basis:51px;border-radius:15px}
+ .cat-icon svg{width:25px;height:25px}
+ .category-icon-card b{font-size:12px}.category-icon-card small{font-size:9px}
+ .category-icon-card .cat-count{font-size:8px;margin-top:7px}
+ .cat-arrow{top:10px;left:10px;width:23px;height:23px}
+}
+@media(max-width:360px){
+ .premium-nav a{padding:0 9px;font-size:10px}
+ .hero-copy{padding:135px 15px 58px}
+ .hero-stats{gap:10px}
+ .category-icon-card{padding:12px;min-height:148px}
+}
+
 </style></head>
 <body>
 <div class="announcement">✨ عروض متجر عبيد مستمرة — <strong>تسوّق المميز بسعر أفضل</strong> &nbsp; | &nbsp; خدمة ودعم نهتم فيك</div>
@@ -199,16 +282,16 @@ body{background:#fff;color:var(--ink)}
 <a class="logo brand-lockup" href="#home" aria-label="Obaid Store — متجر عبيد الرئيسية"><div class="logo-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 41 15v18L24 43 7 33V15L24 5Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M31 16c-2-3-11-3-14 2-4 7 5 14 12 8 2-2 2-5 2-7M17 25c3 5 10 7 14 2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div><div class="logo-name"><span>Obaid <b>Store</b></span><small>متجر عبيد الإلكتروني</small></div></a>
 <form class="search" id="searchForm"><span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></span><input id="searchInput" placeholder="ابحث عن منتجك المفضل..." aria-label="ابحث عن منتج"><button type="submit">بحث</button></form>
 <div class="head-actions"><button class="icon-action account-action" onclick="openAccount()" aria-label="فتح الملف الشخصي"><span class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.8 20c.5-4 3-6 7.2-6s6.7 2 7.2 6"></path></svg></span><span class="action-label">حسابي</span></button><button class="icon-action cart-action" onclick="openCart()" aria-label="فتح سلة المشتريات"><span class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.5L20 8H6"></path><circle cx="10" cy="19.2" r="1.3"></circle><circle cx="17" cy="19.2" r="1.3"></circle></svg></span><span class="action-label">السلة</span><span class="count" id="cartCount">0</span></button></div>
-</div><div class="nav-wrap"><nav class="nav"><a class="active" href="#home">الرئيسية</a><a href="#categories">تسوّق حسب القسم</a><a href="#products">أحدث المنتجات</a><a href="#offers" class="nav-offer">العروض المميزة ✦</a><a href="#why">لماذا متجر عبيد؟</a><a href="account.html">طلباتي وحسابي</a></nav></div></div></header>
+</div><div class="nav-wrap"><nav class="nav premium-nav" aria-label="القائمة الرئيسية"><a class="active" href="#home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"></path></svg><span>الرئيسية</span></a><a href="#categories"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg><span>الأقسام</span></a><a href="#products"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12l2 5-2 13H6L4 8z"></path><path d="M9 8a3 3 0 0 0 6 0"></path></svg><span>المنتجات</span></a><a href="#offers" class="nav-offer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"></path><path d="m19 16 1 2 2 1-2 1-1 2-1-2-2-1 2-1z"></path></svg><span>العروض</span></a><a href="#why"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 1 1 4.5 1.5c-1.5 1-2 1.5-2 3M12 17h.01"></path></svg><span>لماذا عبيد؟</span></a><a href="account.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.8 20c.5-4 3-6 7.2-6s6.7 2 7.2 6"></path></svg><span>حسابي وطلباتي</span></a></nav></div></div></header>
 <main class="container" id="home">
 <section class="hero"><div class="hero-photo"></div><div class="hero-copy"><div class="eyebrow"><i></i> اختيارات مميزة • تجربة تسوق أسهل</div><h1>تسوّق بذكاء<br><span>مع متجر عبيد</span></h1><p>اكتشف مجموعة مختارة من الإلكترونيات والإكسسوارات والمنتجات اليومية، بتجربة تسوق واضحة وسهلة من هاتفك.</p><div class="hero-actions"><a class="btn btn-blue" href="#products">تسوّق الآن <span>←</span></a><a class="btn btn-glass" href="#categories">تصفح الأقسام</a></div><div class="hero-stats"><div><b>منتجات مختارة</b><small>اهتمام بالتفاصيل</small></div><div><b>تجربة سهلة</b><small>مصممة للهاتف</small></div><div><b>عروض متجددة</b><small>تابع الجديد دائماً</small></div></div></div><div class="hero-visual"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=85" alt="سماعات لاسلكية"><div class="hero-tag tag-one">اختيار الأسبوع<span>منتجات مميزة</span></div><div class="hero-tag tag-two">جودة وأناقة ✦</div></div><div class="hero-slider-controls" aria-label="التحكم بالسلايدر"><button type="button" class="slider-arrow" id="slidePrev" aria-label="الشريحة السابقة">‹</button><div class="slider-dots" role="tablist" aria-label="شرائح العروض"><button type="button" class="slider-dot active" data-slide="0" aria-label="العرض الأول"></button><button type="button" class="slider-dot" data-slide="1" aria-label="العرض الثاني"></button><button type="button" class="slider-dot" data-slide="2" aria-label="العرض الثالث"></button></div><button type="button" class="slider-arrow" id="slideNext" aria-label="الشريحة التالية">›</button></div></section>
 
-<section class="section" id="categories"><div class="section-title"><div><h2>تسوّق حسب القسم</h2><p>اختر القسم الأقرب لاحتياجك</p></div><a class="see-all" href="#products">جميع المنتجات ←</a></div><div class="category-tools"><p>تصفّح الأقسام بسرعة، واختر القسم لعرض منتجاته فقط.</p><button type="button" class="category-reset" id="categoryReset" hidden>عرض كل الأقسام</button></div><div class="categories">
-<a class="category" href="#products" data-filter="إلكترونيات"><div class="cat-img"><img loading="lazy" src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=240&q=75" alt="إلكترونيات"></div><div><b>الإلكترونيات</b><small>أجهزة وإكسسوارات</small><span class="cat-count" data-count-for="إلكترونيات">منتجات</span></div></a>
-<a class="category" href="#products" data-filter="صوتيات"><div class="cat-img"><img loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=240&q=75" alt="سماعات"></div><div><b>الصوتيات</b><small>سماعات وصوت</small><span class="cat-count" data-count-for="صوتيات">منتجات</span></div></a>
-<a class="category" href="#products" data-filter="منزل"><div class="cat-img"><img loading="lazy" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=240&q=75" alt="المنزل"></div><div><b>المنزل والمطبخ</b><small>تفاصيل يومية</small><span class="cat-count" data-count-for="منزل">منتجات</span></div></a>
-<a class="category" href="#products" data-filter="موضة"><div class="cat-img"><img loading="lazy" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=240&q=75" alt="موضة"></div><div><b>الموضة</b><small>أناقة كل يوم</small><span class="cat-count" data-count-for="موضة">منتجات</span></div></a>
-<a class="category" href="#products" data-filter="إكسسوارات"><div class="cat-img"><img loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=240&q=75" alt="ساعات"></div><div><b>الإكسسوارات</b><small>لمسات مميزة</small><span class="cat-count" data-count-for="إكسسوارات">منتجات</span></div></a>
+<section class="section" id="categories"><div class="section-title"><div><h2>تسوّق حسب القسم</h2><p>اختر القسم الأقرب لاحتياجك</p></div><a class="see-all" href="#products">جميع المنتجات ←</a></div><div class="category-tools"><p>تصفّح الأقسام بسرعة، واختر القسم لعرض منتجاته فقط.</p><button type="button" class="category-reset" id="categoryReset" hidden>عرض كل الأقسام</button></div><div class="categories category-icon-grid">
+<a class="category category-icon-card" href="#products" data-filter="إلكترونيات"><span class="cat-img cat-icon electronics-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M8 21h8M12 17v4M7 8h10M7 12h6"></path></svg></span><div class="cat-copy"><b>الإلكترونيات</b><small>أجهزة وتقنية</small><span class="cat-count" data-count-for="إلكترونيات">منتجات</span></div><span class="cat-arrow" aria-hidden="true">↖</span></a>
+<a class="category category-icon-card" href="#products" data-filter="صوتيات"><span class="cat-img cat-icon audio-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13v-2a8 8 0 0 1 16 0v2"></path><rect x="3" y="12" width="5" height="8" rx="2"></rect><rect x="16" y="12" width="5" height="8" rx="2"></rect><path d="M16 20a4 4 0 0 1-4 2"></path></svg></span><div class="cat-copy"><b>الصوتيات</b><small>سماعات وصوت</small><span class="cat-count" data-count-for="صوتيات">منتجات</span></div><span class="cat-arrow" aria-hidden="true">↖</span></a>
+<a class="category category-icon-card" href="#products" data-filter="منزل"><span class="cat-img cat-icon home-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"></path><path d="M5 9v12h14V9M9 21v-7h6v7M9 10h.01M15 10h.01"></path></svg></span><div class="cat-copy"><b>المنزل والمطبخ</b><small>احتياجات يومية</small><span class="cat-count" data-count-for="منزل">منتجات</span></div><span class="cat-arrow" aria-hidden="true">↖</span></a>
+<a class="category category-icon-card" href="#products" data-filter="موضة"><span class="cat-img cat-icon fashion-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 4 4 2 4-2 5 4-3 4-2-1v9H8v-9l-2 1-3-4 5-4Z"></path><path d="M8 4c0 3 8 3 8 0"></path></svg></span><div class="cat-copy"><b>الموضة</b><small>أناقة كل يوم</small><span class="cat-count" data-count-for="موضة">منتجات</span></div><span class="cat-arrow" aria-hidden="true">↖</span></a>
+<a class="category category-icon-card" href="#products" data-filter="إكسسوارات"><span class="cat-img cat-icon accessories-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2M8 2 6 4M16 2l2 2"></path></svg></span><div class="cat-copy"><b>الإكسسوارات</b><small>لمسات مميزة</small><span class="cat-count" data-count-for="إكسسوارات">منتجات</span></div><span class="cat-arrow" aria-hidden="true">↖</span></a>
 </div></section>
 <section class="section" id="products"><div class="section-title"><div><h2>مختارات متجر عبيد</h2><p>تعرّف على منتجاتنا المميزة</p></div><a class="see-all" href="#products" onclick="resetFilter(event)">عرض الكل ←</a></div><div class="products" id="productGrid">
 <article class="product" data-name="سماعات لاسلكية بلوتوث" data-category="صوتيات"><div class="product-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=650&q=80" alt="سماعات لاسلكية"><span class="badge">الأكثر طلباً</span><button class="wish" aria-label="أضف للمفضلة" onclick="toggleWish(this)">♡</button></div><div class="product-info"><span class="product-type">صوتيات وإكسسوارات</span><h3>سماعات لاسلكية بتصميم عصري</h3><div class="rating">★★★★★ <span>(24 تقييم)</span></div><div class="price-row"><span class="price">$19.99</span><span class="old-price">$29.99</span></div><div class="product-bottom"><span class="stock">● متوفر للطلب</span><button class="add" onclick="addToCart('سماعات لاسلكية بتصميم عصري',19.99)">＋ أضف للسلة</button></div></div></article>
