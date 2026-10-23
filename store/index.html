@@ -66,16 +66,77 @@ body{background:#fff;color:var(--ink)}
 #bestsellers .section-title{margin-bottom:22px}
 #bestSellerGrid .product{height:100%}
 @media(max-width:640px){.offer-banner{padding:22px!important;gap:14px}.offer-banner .offer-art{opacity:.6}}
+
+/* تحديث الواجهة: أيقونات SVG واضحة وسلايدر تفاعلي وتجاوب أدق للهاتف */
+.search-icon{width:22px;height:22px;display:grid;place-items:center;flex:0 0 22px}
+.search-icon svg,.icon-action svg,.mobile-nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.icon-action{position:relative;min-height:42px;justify-content:center;gap:7px;transition:background .2s,color .2s,transform .2s}
+.icon-action:hover{background:#f2f6ff;color:var(--blue);transform:translateY(-1px)}
+.icon-action .symbol{display:grid;place-items:center;line-height:1}
+.icon-action .symbol svg{width:22px;height:22px}
+.cart-action{background:#f5f8ff;border:1px solid #e7efff;border-radius:13px;padding-inline:12px}
+.count{top:-5px;right:-5px;min-width:20px;height:20px;background:#1769ff;border:2px solid white;box-shadow:0 2px 7px #1769ff30}
+.hero{position:relative}
+.hero-slider-controls{position:absolute;z-index:5;bottom:15px;right:22px;display:flex;align-items:center;gap:9px}
+.slider-arrow{width:31px;height:31px;border:1px solid #1769ff28;border-radius:50%;background:#ffffffdb;color:#1769ff;font-size:25px;line-height:1;display:grid;place-items:center;transition:.2s}
+.slider-arrow:hover{background:#1769ff;color:#fff}
+.slider-dots{display:flex;align-items:center;gap:6px}
+.slider-dot{width:7px;height:7px;border:0;border-radius:9px;background:#a7bde2;padding:0;transition:width .2s,background .2s}
+.slider-dot.active{width:22px;background:#1769ff}
+.mobile-nav a span{height:24px;display:flex;align-items:center;justify-content:center}
+.mobile-nav svg{width:21px;height:21px;stroke-width:1.9}
+.mobile-nav a.active svg{stroke:var(--blue)}
+.mobile-nav a{transition:color .2s}
+.drawer{width:min(460px,100%);padding:clamp(16px,3vw,25px)}
+.drawer-head{position:sticky;top:-1px;background:white;z-index:2;padding:0 0 15px}
+.close{min-height:40px}
+.cart-line{grid-template-columns:minmax(0,1fr) auto;align-items:center}
+.qty button{min-width:32px;min-height:32px;border-radius:9px}
+@media(max-width:900px){
+ .header-main{gap:12px}.head-actions{gap:5px}.icon-action{padding-inline:9px}
+ .hero-slider-controls{bottom:12px;right:16px}
+}
+@media(max-width:600px){
+ .header-main{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:10px 0}
+ .logo{min-width:0}.logo-name{font-size:17px}.logo-name small{font-size:9px}
+ .head-actions{margin:0;justify-self:end}
+ .icon-action{width:43px;height:43px;padding:8px;border-radius:13px}
+ .icon-action .action-label{display:none}
+ .icon-action .symbol svg{width:23px;height:23px}
+ .search{grid-column:1/-1;order:initial;width:100%;max-width:none;margin-top:1px;padding:4px 11px}
+ .search input{min-height:37px}
+ .hero-slider-controls{bottom:10px;right:13px}
+ .slider-arrow{width:29px;height:29px}
+ .hero-copy{padding-bottom:48px}
+ .mobile-nav{padding-top:9px}
+ .mobile-nav a{flex:1;min-width:0}
+ .mobile-nav a span{margin-bottom:3px}
+ .drawer{width:100%;max-width:100%;padding:17px 16px calc(20px + env(safe-area-inset-bottom))}
+ .cart-line{gap:8px}
+ .qty{gap:7px;flex-wrap:wrap}
+}
+@media(max-width:380px){
+ .announcement{font-size:9px}
+ .logo-mark{width:34px;height:34px;border-radius:11px}
+ .logo-name{font-size:15px}
+ .hero h1{font-size:26px}
+ .hero p{font-size:11px}
+ .categories{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .product-photo{height:125px}
+ .icon-action{width:39px;height:40px}
+ .head-actions{gap:4px}
+}
+
 </style></head>
 <body>
 <div class="announcement">✨ عروض متجر عبيد مستمرة — <strong>تسوّق المميز بسعر أفضل</strong> &nbsp; | &nbsp; خدمة ودعم نهتم فيك</div>
 <header><div class="container"><div class="header-main">
 <a class="logo" href="#home" aria-label="متجر عبيد الرئيسية"><div class="logo-mark">ع</div><div class="logo-name">متجر عبيد<small>اختيارك الأذكى كل يوم</small></div></a>
-<form class="search" id="searchForm"><span>⌕</span><input id="searchInput" placeholder="ابحث عن منتجك المفضل..." aria-label="ابحث عن منتج"><button type="submit">بحث</button></form>
-<div class="head-actions"><button class="icon-action" onclick="openAccount()"><span class="symbol">♙</span><span class="action-label">حسابي</span></button><button class="icon-action" onclick="openCart()"><span class="symbol">🛍</span><span class="action-label">السلة</span><span class="count" id="cartCount">0</span></button></div>
+<form class="search" id="searchForm"><span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></span><input id="searchInput" placeholder="ابحث عن منتجك المفضل..." aria-label="ابحث عن منتج"><button type="submit">بحث</button></form>
+<div class="head-actions"><button class="icon-action account-action" onclick="openAccount()" aria-label="فتح الملف الشخصي"><span class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.8 20c.5-4 3-6 7.2-6s6.7 2 7.2 6"></path></svg></span><span class="action-label">حسابي</span></button><button class="icon-action cart-action" onclick="openCart()" aria-label="فتح سلة المشتريات"><span class="symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.5L20 8H6"></path><circle cx="10" cy="19.2" r="1.3"></circle><circle cx="17" cy="19.2" r="1.3"></circle></svg></span><span class="action-label">السلة</span><span class="count" id="cartCount">0</span></button></div>
 </div><div class="nav-wrap"><nav class="nav"><a class="active" href="#home">الرئيسية</a><a href="#categories">تسوّق حسب القسم</a><a href="#products">أحدث المنتجات</a><a href="#offers" class="nav-offer">العروض المميزة ✦</a><a href="#why">لماذا متجر عبيد؟</a><a href="account.html">طلباتي وحسابي</a></nav></div></div></header>
 <main class="container" id="home">
-<section class="hero"><div class="hero-photo"></div><div class="hero-copy"><div class="eyebrow"><i></i> اختيارات مميزة • تجربة تسوق أسهل</div><h1>تسوّق بذكاء<br><span>مع متجر عبيد</span></h1><p>اكتشف مجموعة مختارة من الإلكترونيات والإكسسوارات والمنتجات اليومية، بتجربة تسوق واضحة وسهلة من هاتفك.</p><div class="hero-actions"><a class="btn btn-blue" href="#products">تسوّق الآن <span>←</span></a><a class="btn btn-glass" href="#categories">تصفح الأقسام</a></div><div class="hero-stats"><div><b>منتجات مختارة</b><small>اهتمام بالتفاصيل</small></div><div><b>تجربة سهلة</b><small>مصممة للهاتف</small></div><div><b>عروض متجددة</b><small>تابع الجديد دائماً</small></div></div></div><div class="hero-visual"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=85" alt="سماعات لاسلكية"><div class="hero-tag tag-one">اختيار الأسبوع<span>منتجات مميزة</span></div><div class="hero-tag tag-two">جودة وأناقة ✦</div></div></section>
+<section class="hero"><div class="hero-photo"></div><div class="hero-copy"><div class="eyebrow"><i></i> اختيارات مميزة • تجربة تسوق أسهل</div><h1>تسوّق بذكاء<br><span>مع متجر عبيد</span></h1><p>اكتشف مجموعة مختارة من الإلكترونيات والإكسسوارات والمنتجات اليومية، بتجربة تسوق واضحة وسهلة من هاتفك.</p><div class="hero-actions"><a class="btn btn-blue" href="#products">تسوّق الآن <span>←</span></a><a class="btn btn-glass" href="#categories">تصفح الأقسام</a></div><div class="hero-stats"><div><b>منتجات مختارة</b><small>اهتمام بالتفاصيل</small></div><div><b>تجربة سهلة</b><small>مصممة للهاتف</small></div><div><b>عروض متجددة</b><small>تابع الجديد دائماً</small></div></div></div><div class="hero-visual"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=85" alt="سماعات لاسلكية"><div class="hero-tag tag-one">اختيار الأسبوع<span>منتجات مميزة</span></div><div class="hero-tag tag-two">جودة وأناقة ✦</div></div><div class="hero-slider-controls" aria-label="التحكم بالسلايدر"><button type="button" class="slider-arrow" id="slidePrev" aria-label="الشريحة السابقة">‹</button><div class="slider-dots" role="tablist" aria-label="شرائح العروض"><button type="button" class="slider-dot active" data-slide="0" aria-label="العرض الأول"></button><button type="button" class="slider-dot" data-slide="1" aria-label="العرض الثاني"></button><button type="button" class="slider-dot" data-slide="2" aria-label="العرض الثالث"></button></div><button type="button" class="slider-arrow" id="slideNext" aria-label="الشريحة التالية">›</button></div></section>
 
 <section class="section" id="categories"><div class="section-title"><div><h2>تسوّق حسب القسم</h2><p>اختر القسم الأقرب لاحتياجك</p></div><a class="see-all" href="#products">جميع المنتجات ←</a></div><div class="categories">
 <a class="category" href="#products" data-filter="إلكترونيات"><div class="cat-img"><img loading="lazy" src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=240&q=75" alt="إلكترونيات"></div><div><b>الإلكترونيات</b><small>أجهزة وإكسسوارات</small></div></a>
@@ -102,7 +163,7 @@ body{background:#fff;color:var(--ink)}
 <section class="newsletter"><div><h3>ابقَ على اطلاع بالجديد</h3><p>سجّل بريدك لتجربة نموذجية للاشتراك في أخبار المتجر.</p></div><form class="subscribe" onsubmit="subscribe(event)"><input type="email" required placeholder="بريدك الإلكتروني"><button>اشترك الآن</button></form></section>
 </main>
 <footer><div class="container"><div class="footer-grid"><div><div class="footer-brand">متجر عبيد</div><p>تجربة تسوّق عربية بسيطة وأنيقة، تجمع المنتجات المختارة في مكان واحد. الأسعار والمنتجات الحالية تجريبية ويمكن تعديلها لاحقاً.</p></div><div><h4>تسوّق</h4><a href="#categories">الأقسام</a><a href="#products">جميع المنتجات</a><a href="#offers">العروض</a></div><div><h4>خدمة العملاء</h4><a href="account.html">طلباتي</a><a href="account.html">حسابي</a><a href="#why">معلومات المتجر</a></div><div><h4>حسابك</h4><a href="account.html">الملف الشخصي</a><a href="account.html#orders">الطلبات</a><a href="#home">العودة للأعلى ↑</a></div></div><div class="copyright"><span>© <span id="year"></span> متجر عبيد. جميع الحقوق محفوظة.</span><span>واجهة عربية • متوافقة مع الهاتف</span></div></div></footer>
-<nav class="mobile-nav"><a class="active" href="#home"><span>⌂</span>الرئيسية</a><a href="#categories"><span>▦</span>الأقسام</a><a href="#products"><span>⌕</span>المنتجات</a><a href="#" onclick="openCart();return false"><span>🛍</span>السلة</a><a href="account.html"><span>♙</span>حسابي</a></nav>
+<nav class="mobile-nav"><a class="active" href="#home"><span><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"></path></svg></span>الرئيسية</a><a href="#categories"><span><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg></span>الأقسام</a><a href="#products"><span><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></span>المنتجات</a><a href="#" onclick="openCart();return false"><span><svg viewBox="0 0 24 24"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.5L20 8H6"></path><circle cx="10" cy="19.2" r="1.3"></circle><circle cx="17" cy="19.2" r="1.3"></circle></svg></span>السلة</a><a href="account.html"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.8 20c.5-4 3-6 7.2-6s6.7 2 7.2 6"></path></svg></span>حسابي</a></nav>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="overlay" id="overlay" onclick="if(event.target===this)closeDrawer()"><aside class="drawer"><div class="drawer-head"><h2 id="drawerTitle">سلة المشتريات</h2><button class="close" onclick="closeDrawer()">إغلاق ✕</button></div><div id="drawerBody"></div></aside></div>
 <script>
@@ -126,4 +187,30 @@ document.querySelectorAll('[data-filter]').forEach(a=>a.addEventListener('click'
 function resetFilter(e){e.preventDefault();document.getElementById('searchInput').value='';filterProducts('','')}
 function subscribe(e){e.preventDefault();toast('شكراً لك! الاشتراك تجريبي ولم يتم إرسال البريد.');e.target.reset()}
 document.getElementById('year').textContent=new Date().getFullYear();saveCart();
+
+const heroSlides=[
+ {eyebrow:'اختيارات مميزة • تجربة تسوق أسهل',title:'تسوّق بذكاء',accent:'مع متجر عبيد',description:'اكتشف مجموعة مختارة من الإلكترونيات والإكسسوارات والمنتجات اليومية، بتجربة تسوق واضحة وسهلة من هاتفك.',image:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=85'},
+ {eyebrow:'أناقة وتقنية في مكان واحد',title:'اكتشف الجديد',accent:'كل يوم مع عبيد',description:'تصفّح منتجات مختارة بعناية، واعثر على ما يناسب احتياجاتك بواجهة سهلة وسريعة.',image:'https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=1000&q=85'},
+ {eyebrow:'عروض ومختارات مميزة',title:'اختيارك أسهل',accent:'وتجربتك أروع',description:'ابدأ من الأقسام، شاهد تفاصيل المنتجات، وأضف اختياراتك إلى السلة بخطوات بسيطة.',image:'https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=1000&q=85'}
+];
+let activeHeroSlide=0,heroTimer;
+function showHeroSlide(index){
+ activeHeroSlide=(index+heroSlides.length)%heroSlides.length;
+ const slide=heroSlides[activeHeroSlide],hero=document.querySelector('.hero');
+ const eyebrow=hero.querySelector('.eyebrow'),heading=hero.querySelector('h1'),paragraph=hero.querySelector('.hero-copy p'),photo=hero.querySelector('.hero-photo');
+ eyebrow.innerHTML='<i></i> '+slide.eyebrow;
+ heading.innerHTML=slide.title+'<br><span>'+slide.accent+'</span>';
+ paragraph.textContent=slide.description;
+ photo.style.backgroundImage='url("'+slide.image+'")';
+ hero.querySelectorAll('.slider-dot').forEach((dot,i)=>{dot.classList.toggle('active',i===activeHeroSlide);dot.setAttribute('aria-current',i===activeHeroSlide?'true':'false')});
+}
+function restartHeroTimer(){clearInterval(heroTimer);heroTimer=setInterval(()=>showHeroSlide(activeHeroSlide+1),5500)}
+document.getElementById('slidePrev').addEventListener('click',()=>{showHeroSlide(activeHeroSlide-1);restartHeroTimer()});
+document.getElementById('slideNext').addEventListener('click',()=>{showHeroSlide(activeHeroSlide+1);restartHeroTimer()});
+document.querySelectorAll('.slider-dot').forEach(dot=>dot.addEventListener('click',()=>{showHeroSlide(Number(dot.dataset.slide));restartHeroTimer()}));
+document.querySelector('.hero').addEventListener('mouseenter',()=>clearInterval(heroTimer));
+document.querySelector('.hero').addEventListener('mouseleave',restartHeroTimer);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)clearInterval(heroTimer);else restartHeroTimer()});
+showHeroSlide(0);restartHeroTimer();
+
 </script></body></html>
