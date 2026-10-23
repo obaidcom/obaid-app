@@ -282,3 +282,18 @@ on conflict (key) do nothing;
 -- Do not expose Supabase service_role/secret keys in the storefront.
 -- Guest order submission should be implemented via a validated server-side Edge Function,
 -- not by allowing anonymous clients to read or arbitrarily modify orders.
+
+-- Prevent customers from promoting themselves to administrator.
+create or replace function public.prevent_self_role_change()
+returns trigger language plpgsql security definer set search_path = ''
+as $$
+begin
+  if old.role is distinct from new.role and not public.is_store_admin() then
+    raise exception 'Only a store administrator can change account roles';
+  end if;
+  return new;
+end;
+$$;
+drop trigger if exists protect_profile_role on public.profiles;
+create trigger protect_profile_role before update on public.profiles
+for each row execute function public.prevent_self_role_change();
