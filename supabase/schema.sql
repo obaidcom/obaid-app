@@ -288,7 +288,7 @@ create or replace function public.prevent_self_role_change()
 returns trigger language plpgsql security definer set search_path = ''
 as $$
 begin
-  if old.role is distinct from new.role and not public.is_store_admin() then
+  if old.role is distinct from new.role and (select auth.uid()) is not null and not public.is_store_admin() then
     raise exception 'Only a store administrator can change account roles';
   end if;
   return new;
