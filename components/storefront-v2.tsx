@@ -27,10 +27,8 @@ export function Storefront(){
  const add=(id:number)=>{setCart(c=>({...c,[id]:(c[id]||0)+1}));notify("أُضيف المنتج إلى سلتك")};
  const toggleFav=(id:number)=>setFavorites(v=>v.includes(id)?v.filter(x=>x!==id):[...v,id]);
  const banners=[
-  {eyebrow:"اختيارات عبيد لهذا الأسبوع",title:"تفاصيل صغيرة،
-تجربة أكبر.",sub:"اكتشف منتجات مختارة تجمع بين الجودة والسعر المناسب.",cta:"تسوّق المجموعة",image:"https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=1200&q=90"},
-  {eyebrow:"تقنية تواكب يومك",title:"ارتقِ بتجربتك
-كل يوم.",sub:"أحدث الإكسسوارات والأجهزة التي تستحق أن تكون معك.",cta:"اكتشف الإلكترونيات",image:"https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=90"},
+  {eyebrow:"اختيارات عبيد لهذا الأسبوع",title:"تفاصيل صغيرة،\nتجربة أكبر.",sub:"اكتشف منتجات مختارة تجمع بين الجودة والسعر المناسب.",cta:"تسوّق المجموعة",image:"https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=1200&q=90"},
+  {eyebrow:"تقنية تواكب يومك",title:"ارتقِ بتجربتك\nكل يوم.",sub:"أحدث الإكسسوارات والأجهزة التي تستحق أن تكون معك.",cta:"اكتشف الإلكترونيات",image:"https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=90"},
   {eyebrow:"أناقة بلا تعقيد",title:"اختيارات تشبهك.",sub:"قطع عملية ولمسات عصرية تضيف فرقاً لتفاصيل يومك.",cta:"شاهد الجديد",image:"https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=90"}
  ];
  const productCard=(p:Product)=><article key={p.id} className="group overflow-hidden rounded-[22px] border border-white/10 bg-[#111a2a] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-2xl hover:shadow-cyan-950/30">
